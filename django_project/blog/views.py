@@ -74,8 +74,9 @@ class AddCommentView(CreateView):
     def form_valid(self, form):
         form.instance.post_id = self.kwargs['pk']
         return super().form_valid(form)
-
-    success_url = '/'
+    
+    def get_success_url(self):
+        return '/post/{}/'.format(self.kwargs['pk'])
     
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
