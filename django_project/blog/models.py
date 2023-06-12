@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 class Post(models.Model):
@@ -11,3 +12,6 @@ class Post(models.Model):
 
     def __str__(self): #provides the name of the model; eg: if you have a Post object with the title "My First Post", calling str(post) or print(post) will return "My First Post".
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={'pk': self.pk})
