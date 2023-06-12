@@ -1,5 +1,0 @@
-Webdev Portfolio:
-- Most likely SPA CRUD app
-- Anyone can make an account, but can only comment
-- Not messing with front end much, will not be fancy website
-- Nice and simple, learning Django framework
